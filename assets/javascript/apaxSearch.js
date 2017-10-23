@@ -3,6 +3,8 @@ var nintendoArr = ["Link", "Mario", "Luigi", "Ice Climbers", "Toad"];
 
 var nintendoButton;
 var gifImg;
+var gifCaption;
+var gifFigure;
 var querySearch;
 var queryURL;
 
@@ -95,11 +97,18 @@ $(document).on("click", ".btn-sm", function() {
 		  	"data-animate": result.data[j].images.original.url,
 		  	// technically, state and src don't need quotations but I like to keep it consistent between the keys
 		  	"data-state": "still",
-		  	"src": result.data[j].images.original_still.url 
+		  	"src": result.data[j].images.original_still.url,
+		  	"alt": "gif did not load :(" 
 		  })
 		  // gifImg.attr("src", result.data[j].images.original_still.url);
-		  gifImg.addClass("gif");
-		  $("#gifs-group").append(gifImg);
+		  gifImg.addClass("gif figure-img img-fluid rounded");
+		  gifCaption = $("<figcaption>");
+		  gifCaption.addClass("figure-caption text-right").text(result.data[j].rating);
+		  gifFigure = $("<figure>");
+		  gifFigure.addClass("figure").html(gifImg).append(gifCaption);
+		  $("#gifs-group").append(gifFigure);
+		  // $("#gifs-group").append("<figcaption class='figure-caption'>" + result.data[j].rating + "</figcaption>");
+
 		}
 	 
 	});

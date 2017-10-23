@@ -3,3 +3,12 @@
 	width: 150px;
 	height: 150px;
 }
+#gifs-group {
+	width: 100%;
+	position: relative;
+}
+.gif {
+	/*float:left;*/
+	/*position: absolute;*/
+	/*width: 50px;*/
+}
