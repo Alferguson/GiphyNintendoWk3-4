@@ -8,7 +8,9 @@
 	position: relative;
 }
 .gif {
-	/*float:left;*/
-	/*position: absolute;*/
-	/*width: 50px;*/
+	padding: 50px;
+}
+.btn:not(#submit-button) {
+	margin-left: 10px;
+	margin-bottom: 10px;
 }
